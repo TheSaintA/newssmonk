@@ -25,8 +25,8 @@ export class News extends Component {
             page:1
         }
     }
-    async componentDidMount(){
-      let url = `https://newsapi.org/v2/top-headlines?${this.props.country}&category=${this.props.category}&apiKey=922b08d9c5d54c4fb16b0d9ee21f215a&page=1&pageSize=${this.props.pageSize}`;
+    async updateNews(){
+      const url = `https://newsapi.org/v2/top-headlines?${this.props.country}&category=${this.props.category}&apiKey=922b08d9c5d54c4fb16b0d9ee21f215a&page=${this.state.page}&pageSize=${this.props.pageSize}`;
       this.setState({loading:true});
       let data = await fetch(url);
       let parsedData = await data.json();
@@ -35,36 +35,42 @@ export class News extends Component {
         totalResults:parsedData.totalResults,
         loading: false
       });
-      console.log(parsedData);
+    }
+    async componentDidMount(){
+      this.updateNews();
     }
     handleNextClick = async ()=>{
-      if(!(this.state.page + 1 > Math.ceil(this.state.totalResults/this.props.pageSize))){
-      let url = `https://newsapi.org/v2/top-headlines?${this.props.country}&category=${this.props.category}&apiKey=922b08d9c5d54c4fb16b0d9ee21f215a&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;  
-      this.setState({loading:true});
-      let data = await fetch(url);
-      let parsedData = await data.json();
-      this.setState({
-        page: this.state.page + 1,
-        articles: parsedData.articles,
-        loading: false
-      })
-    }
+    //   if(!(this.state.page + 1 > Math.ceil(this.state.totalResults/this.props.pageSize))){
+    //   let url = `https://newsapi.org/v2/top-headlines?${this.props.country}&category=${this.props.category}&apiKey=922b08d9c5d54c4fb16b0d9ee21f215a&page=${this.state.page + 1}&pageSize=${this.props.pageSize}`;  
+    //   this.setState({loading:true});
+    //   let data = await fetch(url);
+    //   let parsedData = await data.json();
+    //   this.setState({
+    //     page: this.state.page + 1,
+    //     articles: parsedData.articles,
+    //     loading: false
+    //   })
+    // }
+    this.setState({page: this.state.page + 1});
+    this.updateNews();
     }
     handlePrevClick = async ()=>{
-      let url = `https://newsapi.org/v2/top-headlines?${this.props.country}&category=${this.props.category}&apiKey=922b08d9c5d54c4fb16b0d9ee21f215a&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;  
-      this.setState.loading({loading:true});
-      let data = await fetch(url);
-      let parsedData = await data.json();
-      this.setState({
-        page: this.state.page - 1,
-        articles: parsedData.articles,
-        loading: false
-      })
+      // let url = `https://newsapi.org/v2/top-headlines?${this.props.country}&category=${this.props.category}&apiKey=922b08d9c5d54c4fb16b0d9ee21f215a&page=${this.state.page - 1}&pageSize=${this.props.pageSize}`;  
+      // this.setState.loading({loading:true});
+      // let data = await fetch(url);
+      // let parsedData = await data.json();
+      // this.setState({
+      //   page: this.state.page - 1,
+      //   articles: parsedData.articles,
+      //   loading: false
+      // })
+      this.setState({page: this.state.page - 1});
+      this.updateNews();
     }
     
   render() {
     return <div>
-        <div className="container my-lg-3">
+        <div className="container  newsContainer">
             <div className="row">
                 <div className="col">
                     <h2 className='text-center'><img src={logo} style={{width:"50px"}} className="img-fluid"/>  NewsMonk - Top Headlines</h2>
@@ -72,12 +78,10 @@ export class News extends Component {
                     {this.state.loading && <Spinner/>}
                 </div>
             </div>
-            
-            <hr/>
             <div className="row">
               {!this.state.loading && this.state.articles.map((element)=>{
                  return <div className="col-md-3 my-2" key={element.url}> 
-                  <NewsItem  title={element.title?element.title.slice(0,20):""} description={element.description?element.description.slice(0,88):""} imageUrl={element.urlToImage} newsUrl={element.url}/>
+                  <NewsItem  title={element.title?element.title.slice(0,20):""} description={element.description?element.description.slice(0,88):""} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} source={element.source.name} publishedAt={element.publishedAt}/>
                 </div>
               })}
             </div>
