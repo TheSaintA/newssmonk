@@ -61,6 +61,7 @@ export class News extends Component {
         loading: false
       })
     }
+    
   render() {
     return <div>
         <div className="container my-lg-3">
@@ -71,6 +72,8 @@ export class News extends Component {
                     {this.state.loading && <Spinner/>}
                 </div>
             </div>
+            
+            <hr/>
             <div className="row">
               {!this.state.loading && this.state.articles.map((element)=>{
                  return <div className="col-md-3 my-2" key={element.url}> 

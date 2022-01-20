@@ -41,9 +41,6 @@ export class Navbar extends Component {
                 <a className="nav-link active" aria-current="page" href="/">Home</a>
                 </li>
                 <li className="nav-item">
-                <Link className="nav-link" to="/general">General</Link>
-                </li>
-                <li className="nav-item">
                 <Link className="nav-link" to="/business">Business</Link>
                 </li>
                 <li className="nav-item">
@@ -67,7 +64,7 @@ export class Navbar extends Component {
             </ul>
             <div className="form-check form-switch">
               <input className="form-check-input" onClick={this.toggleMode} type="checkbox" id="flexSwitchCheckDefault"/>
-              <label className="form-check-label" hmtlFor="flexSwitchCheckDefault"><span className="fa fa-moon-o text-warning fa-lg"></span></label>
+              <label className="form-check-label" htmlFor="flexSwitchCheckDefault"><span className="fa fa-moon-o text-warning fa-lg"></span></label>
             </div>
             </div>
         </div>
