@@ -22,9 +22,9 @@ export default class App extends Component {
     <Router>
     <div>
       <Navbar mode='dark' />
-      
+     
     <Routes>
-    <Route exact path="/" element={<News pageSize={this.pageSize} country={this.country} category="general"/>} />
+    <Route exact path="/" element={<News pageSize={this.pageSize} country={this.country} category="top"/>} />
     </Routes>
     <Routes>
     <Route exact path="/business" element={<News pageSize={this.pageSize} country={this.country} category="business"/>} /> 

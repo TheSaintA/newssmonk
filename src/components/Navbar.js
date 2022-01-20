@@ -31,7 +31,7 @@ export class Navbar extends Component {
 
   render() {
     return <div>
-        <nav style={{margin:"10px 50px auto"}} id="myHeader" className={`navbar header   p-3 shadow-lg navbar-expand-lg navbar-${this.state.mode} bg-${this.state.mode}`}>
+        <nav id="myHeader" className={`navbar header   p-3 shadow-lg navbar-expand-lg navbar-${this.state.mode} bg-${this.state.mode}`}>
         <div className="container-fluid">
         
             <a className="navbar-brand fw-bold" href="/"><img src={logo} style={{width:"35px"}}/> NewsMonk</a>
