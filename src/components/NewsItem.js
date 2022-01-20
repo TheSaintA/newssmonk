@@ -7,7 +7,7 @@ export class NewsItem extends Component {
     return <div>
       
         <div className="card shadow" style={{width: "18rem;"}}>
-        <span style={{left:"90%",top:"2%"}} class="position-absolute p-2 translate-middle badge rounded-pill bg-danger">
+        <span style={{left:"80%",top:"2%"}} class="position-absolute p-2 translate-middle badge rounded-pill bg-danger">
           {source}
           <span class="visually-hidden">Latest News</span>
         </span>
