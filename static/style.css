@@ -1,0 +1,26 @@
+.newsContainer{
+    margin-top:100px !important;    
+}
+
+.nav-10{
+    margin:10px 50px auto;
+}
+.nav-0{
+    margin:0px 50px auto ;
+}
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+  }
+@media screen and (max-width:765px){
+    .nav-0{
+        margin:0px auto !important;
+    } 
+    .nav-10{
+        margin:0px auto;
+    }
+      
+}
