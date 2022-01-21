@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/TheSaintA/news_monk/static/css/main.abd64e84.css",
-    "main.js": "/TheSaintA/news_monk/static/js/main.ddfd38a8.js",
+    "main.js": "/TheSaintA/news_monk/static/js/main.338a80f3.js",
     "static/js/787.250e6aa4.chunk.js": "/TheSaintA/news_monk/static/js/787.250e6aa4.chunk.js",
     "static/media/logo.png": "/TheSaintA/news_monk/static/media/logo.db35bb1e40d6a259f998.png",
     "static/media/spinner1.gif": "/TheSaintA/news_monk/static/media/spinner1.82e1052afa2015141241.gif",
     "index.html": "/TheSaintA/news_monk/index.html",
     "main.abd64e84.css.map": "/TheSaintA/news_monk/static/css/main.abd64e84.css.map",
-    "main.ddfd38a8.js.map": "/TheSaintA/news_monk/static/js/main.ddfd38a8.js.map",
+    "main.338a80f3.js.map": "/TheSaintA/news_monk/static/js/main.338a80f3.js.map",
     "787.250e6aa4.chunk.js.map": "/TheSaintA/news_monk/static/js/787.250e6aa4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.abd64e84.css",
-    "static/js/main.ddfd38a8.js"
+    "static/js/main.338a80f3.js"
   ]
 }
