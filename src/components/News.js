@@ -25,16 +25,19 @@ export class News extends Component {
     };
   }
   async updateNews() {
-    const url = `https://newsdata.io/api/1/news?country=${this.props.country}&category=${this.props.category}&apikey=pub_3801fd6312958e22719ac5d538d63d447ef5&page=${this.state.page}`;
-    // const url = `https://newsapi.org/v2/top-headlines?${this.props.country}&category=${this.props.category}&apiKey=922b08d9c5d54c4fb16b0d9ee21f215a&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+    this.props.setProgress(0);
+    const url = `https://newsdata.io/api/1/news?country=${this.props.country}&category=${this.props.category}&apikey=${this.props.apiKey}&page=${this.state.page}`;
     this.setState({ loading: true });
     let data = await fetch(url);
+    this.props.setProgress(30);
     let parsedData = await data.json();
+    this.props.setProgress(70);
     this.setState({
       results: parsedData.results,
       totalResults: parsedData.totalResults,
       loading: false,
     });
+    this.props.setProgress(100);
   }
   async componentDidMount() {
     this.updateNews();
@@ -71,9 +74,9 @@ export class News extends Component {
     items: Array.from({ length: 20 })
   };
   fetchMoreData = async () => {
+    
    this.setState({page: this.state.page + 1})
-   const url = `https://newsdata.io/api/1/news?country=${this.props.country}&category=${this.props.category}&apikey=pub_3801fd6312958e22719ac5d538d63d447ef5&page=${this.state.page}`;
-  //  const url = `https://newsapi.org/v2/top-headlines?${this.props.country}&category=${this.props.category}&apiKey=922b08d9c5d54c4fb16b0d9ee21f215a&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+   const url = `https://newsdata.io/api/1/news?country=${this.props.country}&category=${this.props.category}&apikey=${this.props.apiKey}&page=${this.state.page}`;
     this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
@@ -82,6 +85,7 @@ export class News extends Component {
       totalResults: parsedData.totalResults,
       loading: false,
     });
+    
   };
   render() {
     return (
@@ -90,12 +94,8 @@ export class News extends Component {
           <div className="row">
             <div className="col">
               <h2 className="text-center">
-                <img
-                  src={logo}
-                  style={{ width: "50px" }}
-                  className="img-fluid"
-                />{" "}
-                NewsMonk - Top Headlines
+                
+                {this.props.title} - Top Headlines
               </h2>
               <hr />
               {/* {this.state.loading && <Spinner />} */}
@@ -114,8 +114,9 @@ export class News extends Component {
               {
                 this.state.results.map((element) => {
                   return (
-                    <div className="col-md-3 my-2" key={element.link}>
+                    <div className="col-md-4 my-2" key={element.link}>
                       <NewsItem
+                        mode={this.props.mode}
                         title={element.title ? element.title.slice(0, 40) : ""}
                         description={
                           element.description
@@ -135,7 +136,6 @@ export class News extends Component {
             {/* <hr /> */}
         </div>
           </InfiniteScroll>
-          <button onclick="topFunction()" id="myBtn" class="btn btn-dark" title="Go to top">Top</button>
         {/* <div
           className="container-fluid position-fixed"
           style={{ bottom: "2px", left: "auto", width: "100%" }}

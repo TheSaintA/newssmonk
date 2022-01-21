@@ -1,8 +1,12 @@
 .newsContainer{
-    margin-top:50px !important;    
+    margin-top:100px !important;    
 }
-nav{
+
+.nav-10{
     margin:10px 50px auto;
+}
+.nav-0{
+    margin:0px 50px auto ;
 }
 #myBtn {
     display: none;
@@ -12,7 +16,11 @@ nav{
     z-index: 99;
   }
 @media screen and (max-width:765px){
-    nav{
+    .nav-0{
         margin:0px auto !important;
-    }   
+    } 
+    .nav-10{
+        margin:0px auto;
+    }
+      
 }

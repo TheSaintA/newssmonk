@@ -1,37 +1,37 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import india from './india.png';
-import usa from './usa.png';
-import uk from './uk.png';
 import logo from './logo.png';
+
 export class Navbar extends Component {
  constructor(){
    super();
-  this.state = {
-    mode: 'light'
-  }
-  }
-  
-  toggleMode=()=>{
-    if(this.state.mode === 'light'){
-      this.setState({mode: 'dark'});
-      document.body.style.backgroundColor = 'black';
-      document.body.style.color = 'white';
-    }else{
-      this.setState({mode: 'light'});
-      document.body.style.backgroundColor = 'white';
-      document.body.style.color = 'black';
-      for (let index = 0; index < 9; index++) {
-        document.getElementsByClassName('card-text')[index].style.color = 'black';
-        
-      }
-      
+    this.state = {
+      sticky: "fixed-top",
+      nav:"nav-10"
     }
   }
+ componentDidMount(){
+   window.addEventListener("scroll",this.handleScroll);
+ }
+ componentWillUnmount() {
+  window.removeEventListener('scroll');
+}
+ handleScroll= () => {
+   const nav = document.getElementsByClassName("navbar");
+  if (window.pageYOffset > 140) {
+      if(!this.state.sticky){
+        this.setState({ nav:"nav-0" });
+      }
+  }else{
+      if(this.state.sticky){
+        this.setState({ nav:"nav-10" });
+      }
+  }
+}
 
   render() {
     return <div>
-        <nav id="myHeader" className={`navbar header   p-3 shadow-lg navbar-expand-lg navbar-${this.state.mode} bg-${this.state.mode}`}>
+        <nav  className={`navbar header ${this.state.sticky} ${this.state.nav}  p-3 shadow-lg navbar-expand-lg navbar-${this.props.mode} bg-${this.props.mode}`}>
         <div className="container-fluid">
         
             <a className="navbar-brand fw-bold" href="/"><img src={logo} style={{width:"35px"}}/> NewsMonk</a>
@@ -65,13 +65,8 @@ export class Navbar extends Component {
                 <Link className="nav-link" to="/about">About</Link>
                 </li>
             </ul>
-            <div className="btn-group">
-              <Link className='btn fw-bold' to="/india"><img src={india} alt="India" style={{width:"25px"}} /> India</Link>
-              <Link className='btn fw-bold' to="/usa"><img src={usa} alt="India" style={{width:"25px"}} /> USA</Link>
-              <Link className='btn fw-bold' to="/uk"><img src={uk} alt="India" style={{width:"25px"}} /> UK</Link>
-            </div>
             <div className="form-check form-switch">
-              <input className="form-check-input" onClick={this.toggleMode} type="checkbox" id="flexSwitchCheckDefault"/>
+              <input className="form-check-input" onClick={this.props.toggleMode} type="checkbox" id="flexSwitchCheckDefault"/>
               <label className="form-check-label" htmlFor="flexSwitchCheckDefault"><span className="fa fa-moon-o text-warning fa-lg"></span></label>
             </div>
             </div>
