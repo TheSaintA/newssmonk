@@ -6,7 +6,7 @@ import News from "./components/News";
 import About from "./components/About";
 import LoadingBar from "react-top-loading-bar";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
 export default class App extends Component {
   
@@ -50,7 +50,7 @@ export default class App extends Component {
   
   render() {
     return (
-      <Router>
+      <Router basename="/">
         <div>
           <LoadingBar
             color="#f11946"
