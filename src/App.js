@@ -4,9 +4,10 @@ import React, { Component } from "react";
 import Navbar from "./components/Navbar";
 import News from "./components/News";
 import About from "./components/About";
+import Author from "./components/Author";
 import LoadingBar from "react-top-loading-bar";
 
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default class App extends Component {
   
@@ -182,6 +183,7 @@ export default class App extends Component {
           <Routes>
             <Route exact path="/about" element={<About />} />
           </Routes>
+          <Author/>
         </div>
       </Router>
     );

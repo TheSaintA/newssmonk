@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Author from './Author';
 import logo from './logo.png';
 
 export class Navbar extends Component {
@@ -10,24 +11,7 @@ export class Navbar extends Component {
       nav:"nav-10"
     }
   }
- componentDidMount(){
-   window.addEventListener("scroll",this.handleScroll);
- }
- componentWillUnmount() {
-  window.removeEventListener('scroll');
-}
- handleScroll= () => {
-   const nav = document.getElementsByClassName("navbar");
-  if (window.pageYOffset > 140) {
-      if(!this.state.sticky){
-        this.setState({ nav:"nav-0" });
-      }
-  }else{
-      if(this.state.sticky){
-        this.setState({ nav:"nav-10" });
-      }
-  }
-}
+
 
   render() {
     return <div>
@@ -69,6 +53,7 @@ export class Navbar extends Component {
               <input className="form-check-input" onClick={this.props.toggleMode} type="checkbox" id="flexSwitchCheckDefault"/>
               <label className="form-check-label" htmlFor="flexSwitchCheckDefault"><span className="fa fa-moon-o text-warning fa-lg"></span></label>
             </div>
+            <Author/>
             </div>
         </div>
         </nav>

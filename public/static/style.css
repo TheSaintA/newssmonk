@@ -1,3 +1,6 @@
+.author{
+    display:none !important;
+}
 .newsContainer{
     margin-top:100px !important;    
 }
@@ -22,5 +25,6 @@
     .nav-10{
         margin:0px auto;
     }
+    
       
 }
