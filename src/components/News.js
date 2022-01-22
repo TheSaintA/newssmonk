@@ -89,7 +89,7 @@ export class News extends Component {
   render() {
     return (
       <div>
-        <div className="container newsContainer" style={{margin:"120px auto"}}>
+        <div className="container newsContainer">
           <div className="row">
             <div className="col">
               <h2 className="text-center">
