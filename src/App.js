@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import News from "./components/News";
 import About from "./components/About";
 import Author from "./components/Author";
+
 import LoadingBar from "react-top-loading-bar";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";

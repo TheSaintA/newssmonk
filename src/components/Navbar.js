@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Author from './Author';
-import logo from './logo.png';
+import logo from './monk_logo.png';
+import "./style.css";
 
 export class Navbar extends Component {
  constructor(){
@@ -18,7 +18,9 @@ export class Navbar extends Component {
         <nav  className={`navbar header ${this.state.sticky} ${this.state.nav}  p-3 shadow-lg navbar-expand-lg navbar-${this.props.mode} bg-${this.props.mode}`}>
         <div className="container-fluid">
         
-            <a className="navbar-brand fw-bold" href="/"><img src={logo} style={{width:"35px"}}/> NewsMonk</a>
+            <a className="navbar-brand my-0 py-0 fw-bold" href="/">
+              <img src={logo} style={{width:"200px"}}/> 
+            </a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
             </button>
@@ -53,7 +55,6 @@ export class Navbar extends Component {
               <input className="form-check-input" onClick={this.props.toggleMode} type="checkbox" id="flexSwitchCheckDefault"/>
               <label className="form-check-label" htmlFor="flexSwitchCheckDefault"><span className="fa fa-moon-o text-warning fa-lg"></span></label>
             </div>
-            <Author/>
             </div>
         </div>
         </nav>

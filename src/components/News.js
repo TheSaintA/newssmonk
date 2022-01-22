@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
-import logo from "./logo.png";
 import PropTypes from "prop-types";
 import InfiniteScroll from "react-infinite-scroll-component";
 
@@ -90,7 +89,7 @@ export class News extends Component {
   render() {
     return (
       <div>
-        <div className="container newsContainer">
+        <div className="container newsContainer" style={{margin:"120px auto"}}>
           <div className="row">
             <div className="col">
               <h2 className="text-center">
