@@ -19,7 +19,7 @@ export default class App extends Component {
 
   pageSize = 8;
   country = "in";
-  apiKey = process.env.REACT_APP_NEWS_MONK_API;
+  apiKey = "pub_3801fd6312958e22719ac5d538d63d447ef5"; //process.env.REACT_APP_NEWS_MONK_API;
   title = "News Monk"
   siteTitle = "Home : Top Headlines,Entertainment, Technology, Health, Business, Science"
   state = {
@@ -66,7 +66,7 @@ export default class App extends Component {
               path="/"
               element={
                 <News
-                  mode={this.mode}
+                  mode={this.state.mode}
                   title={this.title}
                   apiKey={this.apiKey}
                   setProgress={this.setProgress}
@@ -83,7 +83,7 @@ export default class App extends Component {
               path="/business"
               element={
                 <News
-                  mode={this.mode}
+                  mode={this.state.mode}
                   title={this.title}
                   apiKey={this.apiKey}
                   setProgress={this.setProgress}
@@ -100,7 +100,7 @@ export default class App extends Component {
               path="/entertainment"
               element={
                 <News
-                  mode={this.mode}
+                  mode={this.state.mode}
                   title={this.title}
                   apiKey={this.apiKey}
                   setProgress={this.setProgress}
@@ -117,7 +117,7 @@ export default class App extends Component {
               path="/health"
               element={
                 <News
-                  mode={this.mode}
+                  mode={this.state.mode}
                   title={this.title}
                   apiKey={this.apiKey}
                   setProgress={this.setProgress}
@@ -134,7 +134,7 @@ export default class App extends Component {
               path="/science"
               element={
                 <News
-                  mode={this.mode}
+                  mode={this.state.mode}
                   title={this.title}
                   apiKey={this.apiKey}
                   setProgress={this.setProgress}
@@ -151,7 +151,7 @@ export default class App extends Component {
               path="/sports"
               element={
                 <News
-                  mode={this.mode}
+                  mode={this.state.mode}
                   title={this.title}
                   apiKey={this.apiKey}
                   setProgress={this.setProgress}
@@ -168,7 +168,7 @@ export default class App extends Component {
               path="/technology"
               element={
                 <News
-                  mode={this.mode}
+                  mode={this.state.mode}
                   title={this.title}
                   apiKey={this.apiKey}
                   setProgress={this.setProgress}
