@@ -18,7 +18,7 @@ export class Navbar extends Component {
         <nav  className={`navbar header ${this.state.sticky} ${this.state.nav}  p-3 shadow-lg navbar-expand-lg navbar-${this.props.mode} bg-${this.props.mode}`}>
         <div className="container-fluid">
         
-            <a className="navbar-brand my-0 py-0 fw-bold" href="/">
+            <a className="navbar-brand my-0 py-0 fw-bold" href="https://github.com/TheSaintA" target="_blank">
               <img src={logo} style={{width:"200px"}}/> 
             </a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
