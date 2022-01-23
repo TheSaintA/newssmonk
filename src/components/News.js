@@ -116,10 +116,10 @@ export class News extends Component {
                     <div className="col-md-4 my-2" key={element.link}>
                       <NewsItem
                         mode={this.props.mode}
-                        title={element.title ? element.title.slice(0, 40) : ""}
+                        title={element.title ? element.title.slice(0, 50) : ""}
                         description={
                           element.description
-                            ? element.description.slice(0, 88)
+                            ? element.description.slice(0, 300)
                             : ""
                         }
                         imageUrl={element.image_url}

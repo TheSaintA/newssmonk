@@ -11,30 +11,43 @@ export default class About extends Component {
     }
   render() {
     return <div>
-        <div className="container">
-        <div className="row">
-                <div className="col">
-                    <h2 className='text-center'><img src={logo} style={{width:"50px"}} className="img-fluid"/>  NewsMonk - Top Headlines</h2>
-                    <hr/>
-                    {this.state.loading && <Spinner/>}
-                </div>
-            </div>
+        <div className="container newsContainer">
+       
             <div className="row">
                 <div className="col-md-12">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, debitis? Fugiat eligendi possimus voluptatum, officia obcaecati aperiam cupiditate dignissimos, sequi, ab enim eaque. Ut perspiciatis alias voluptatibus omnis ullam quam!
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. In eos quisquam accusantium beatae, provident quas illo quibusdam necessitatibus magnam dolorem itaque perspiciatis! Quam suscipit quo totam cupiditate tempora nulla excepturi!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid quidem delectus consequatur perferendis neque eum magni est. Totam, eveniet provident voluptatum at, exercitationem consequatur illum, tempora adipisci fugiat magni numquam?
+                    <h3>About</h3>
+                    <p class="text-wrap">News Monk is the revolutionary digital product from the house of The Saint. Your one stop solution for Breaking News,  Magazines, Newspapers, & much more. News Monk is the millennial way to stay ahead.</p>
+                    <p>With Latest Breaking News every second, 800+ Magazines, Famous Blogs, and News websites from India and all over the world.</p>
+                    <p><b>Your News, Your Language</b></p>
+                    <hr/>
                 </div>
                 <div className="col-md-12">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, debitis? Fugiat eligendi possimus voluptatum, officia obcaecati aperiam cupiditate dignissimos, sequi, ab enim eaque. Ut perspiciatis alias voluptatibus omnis ullam quam!
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. In eos quisquam accusantium beatae, provident quas illo quibusdam necessitatibus magnam dolorem itaque perspiciatis! Quam suscipit quo totam cupiditate tempora nulla excepturi!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid quidem delectus consequatur perferendis neque eum magni est. Totam, eveniet provident voluptatum at, exercitationem consequatur illum, tempora adipisci fugiat magni numquam?
+                    <h4>BREAKING NEWS ALERT</h4>
+                    <p>With a personalized home screen experience stay updated on breaking news. Keep up with all the Top Stories on a single click & share your favorite local and global news.</p>
                 </div>
-                <hr/>
                 <div className="col-md-12">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius, debitis? Fugiat eligendi possimus voluptatum, officia obcaecati aperiam cupiditate dignissimos, sequi, ab enim eaque. Ut perspiciatis alias voluptatibus omnis ullam quam!
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. In eos quisquam accusantium beatae, provident quas illo quibusdam necessitatibus magnam dolorem itaque perspiciatis! Quam suscipit quo totam cupiditate tempora nulla excepturi!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid quidem delectus consequatur perferendis neque eum magni est. Totam, eveniet provident voluptatum at, exercitationem consequatur illum, tempora adipisci fugiat magni numquam?
+                    <h4>DAILY NEWSPAPERS</h4>
+                    <p>News Monk brings before you all the famous newspapers for free. Yes folks it has almost 250+ leading newspapers including the regional ones. That is why we say Your Region, Your News..</p>
+                </div>
+                <div className="col-md-12">
+                    <h5>Features</h5>
+                    <ul>
+                        <li>Read magazines and newspaper without downloading them.</li>
+                        <li>Cleaner interface and intuitive navigation to enhance your reading experience.</li>
+                        <li>You can read magazines issues and newspaper archives from past.</li>
+                        <li>Offline Reading - Read news in offline mode even without internet, using the offline reading feature</li>
+                    </ul>
+                </div>
+                <div className="col-md-12">
+                    <h4>SUPPORT</h4>
+                    <p>Reach out to us at <a href="https://github.com/TheSaintA/newssmonk">The Saint</a> for any queries, feedback or in need of assistance.</p>
+                    <p>You may also contact us on our social media pages:</p>
+                    <ul>
+                        <li>Facebook : <a href="https://www.facebook.com/wani2wani">https://www.facebook.com/wani2wani</a></li>
+                    </ul>
+                </div>
+                <div className="col-md-12">
+                    <p className="text-center">Stay connected, Stay informed & Stay entertained!</p>
                 </div>
             </div>
         </div>
